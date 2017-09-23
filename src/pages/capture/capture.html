@@ -1,0 +1,79 @@
+<!--
+  Generated template for the CapturePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Capture</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <ion-grid justify>
+        <ion-row justify-content-around>
+          <ion-col col-7>
+            <ion-item no-lines>
+              <ion-avatar item-start>
+                <img src="http://lorempixel.com/50/50">
+              </ion-avatar>
+              <h3>Marty McFly</h3>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  <div *ngIf="displayform" padding> 
+ <!-- <div padding> -->
+    <ion-row justify-content-center>
+      <ion-item text-center>
+        <h1>{{price}} R$ </h1> 
+      </ion-item>
+      
+    </ion-row>
+ 
+
+  <div padding>
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col col-3>
+          <ion-item no-lines>
+            <h1>{{hours}}</h1>
+          </ion-item>
+          <h6>hours</h6>
+        </ion-col>
+      </ion-row>
+      <ion-row justify-content-around>
+        <ion-col col-3>
+          <button ion-button icon-only (click)="addValue()">
+            <ion-icon name="add"></ion-icon> </button>
+            </ion-col>
+            <ion-col col-3>
+                <button ion-button icon-only (click)="minusValue()">
+                    <ion-icon name="remove"></ion-icon></button>
+            </ion-col>
+
+            <ion-col col-3>
+                <button ion-button icon-only>
+                    <ion-icon name="options"></ion-icon>
+                  </button>
+            </ion-col>
+          
+              <ion-col col-3>
+                  <button ion-button icon-only (click)="setValue()">
+                      <ion-icon name="checkmark"></ion-icon>
+                    </button>
+              </ion-col>
+             
+        
+      </ion-row>
+      <ion-row>
+          <button ion-button block large icon-left> <ion-icon name="calendar" ></ion-icon>Agendar</button>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
+</ion-content>
