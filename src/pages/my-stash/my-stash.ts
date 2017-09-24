@@ -13,7 +13,7 @@ export class MyStashPage {
   countdown: number = 0;
   countdownmin: number = 0;
   lockStatus: boolean = true;
-  lockStatusText = "Locked";
+  lockStatusText = "Fechado";
   lockicon = "lock";
   startClock = "";
   stopClock = "";
@@ -52,7 +52,7 @@ export class MyStashPage {
         if (this.navParams.get("hours") == NaN) {
           this.showConfirm();
         }
-        this.lockStatusText = "unlocked";
+        this.lockStatusText = "Aberto";
         this.lockicon = "unlock";
         if (this.countdownmin == 0 && this.countdown == 0) {
           this.countdownTimer();
@@ -64,7 +64,7 @@ export class MyStashPage {
         this.restUnlock(this.param);
       } else {
         this.lockbtndisable = false;
-        this.lockStatusText = "locked";
+        this.lockStatusText = "Fechado";
         this.lockicon = "lock";
         this.param = {
           lock: "Locked"
@@ -72,7 +72,7 @@ export class MyStashPage {
         this.restLock(this.param);
       }
     }
-/**  lockbtn() {
+  /**lockbtn() {
     this.lockStatus = !this.lockStatus;
     this.lockbtndisable = true;
     if (!this.lockStatus) {
@@ -103,8 +103,8 @@ export class MyStashPage {
         this.lockbtndisable = false;
       });
     }
-  }
-  countdownTimer() {
+  }**/
+  /**countdownTimer() {
     let d = new Date();
     let hr = d.getHours();
     let mn = d.getMinutes();
@@ -144,14 +144,14 @@ export class MyStashPage {
       }, 60000);
       this.lockbtndisable = false;
     });
-  }
-  **/
+  }**/
+
 
   countdownTimer() {
     let d = new Date();
     let hr = d.getHours();
     let mn = d.getMinutes();
-    this.timer = 2
+    this.timer = this.navHours;
     this.param = {
       hours: this.navHours,
       min: mn,
@@ -159,16 +159,16 @@ export class MyStashPage {
       stash: this.navPrice,
       lock: "Unlocked"
     };
-    this.price = 40;
-    this.startClock = "6:00";
-    this.stopClock = "8:00";
+    this.price = this.navPrice;
+    this.startClock = hr + ":" + mn;
+    this.stopClock = (hr + this.navHours) + ":" + mn;
     this.countdown = this.timer - 1;
-    this.lockStatusText = "Unlocked";
+    this.lockStatusText = "Aberto";
     this.lockicon = "unlock";
     this.lockbtndisable = false;
     this.countdownmin = 59;
-    this.intervaltimer = setInterval(function() {
-    this.countdownmin -= 1;
+    this.intervaltimer = setInterval(() => {
+      this.countdownmin -= 1;
       if (this.countdownmin == -1) {
         this.countdownmin = 59;
         if (this.countdown > 0) {
@@ -181,6 +181,7 @@ export class MyStashPage {
     }, 60000);
     this.lockbtndisable = false;
   }
+  //
   getdata(data) {
     return new Promise(resolve => {
       this.http

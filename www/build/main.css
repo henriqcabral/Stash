@@ -4357,7 +4357,7 @@ ion-alert input {
 }
 
 .alert-md .alert-title {
-  font-size: 22px;
+  font-size: 30px;
 }
 
 .alert-md .alert-sub-title {
@@ -5074,7 +5074,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.2rem;
+  font-size: 5rem;
 }
 
 h4 {
@@ -5474,19 +5474,19 @@ ion-footer {
 
 ion-app.ios {
   font-family: -apple-system, "Helvetica Neue", "Roboto", sans-serif;
-  font-size: 1.4rem;
+  font-size: 2rem;
   background-color: #fff;
 }
 
 ion-app.md {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
-  font-size: 1.4rem;
+  font-size: 2rem;
   background-color: #fff;
 }
 
 ion-app.wp {
   font-family: "Segoe UI", "Noto Sans", sans-serif;
-  font-size: 1.4rem;
+  font-size: 2rem;
   background-color: #fff;
 }
 

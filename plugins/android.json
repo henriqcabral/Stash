@@ -7,9 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "phonegap-plugin-barcodescanner": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
@@ -23,6 +20,9 @@
             "PACKAGE_NAME": "io.ionic.starter"
         },
         "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "phonegap-plugin-barcodescanner": {
             "PACKAGE_NAME": "io.ionic.starter"
         }
     },

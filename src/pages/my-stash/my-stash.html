@@ -19,7 +19,7 @@
           <ion-col col-7>
             <ion-item no-lines>
               <ion-avatar item-start>
-                <img src="http://lorempixel.com/50/50">
+                <img src="assets/icon/images.jpg">
               </ion-avatar>
               <h3>Marty McFly</h3>
             </ion-item>
@@ -33,8 +33,8 @@
   <ion-item  text-center>
     <h1 icon-left margin > <ion-icon name="stopwatch"></ion-icon> {{countdown}}:{{countdownmin}}</h1>
  </ion-item>
- <ion-item > 
-   <ion-row justify-content-center> 
+ <ion-item >
+   <ion-row justify-content-center>
    <ion-col col-3 margin-left>
       <button ion-button icon-only (click)="lockbtn()" large [disabled]="lockbtndisable">
           <ion-icon [name]="lockicon"></ion-icon>
@@ -43,7 +43,7 @@
    <ion-col col-3 margin-left>
       <button ion-button icon-only large>
           <ion-icon name="timer"></ion-icon>
-        </button> 
+        </button>
    </ion-col>
   </ion-row>
   </ion-item>
@@ -58,17 +58,17 @@
         <div text-end>
             <ion-icon name="briefcase" style="zoom:4.0;"></ion-icon>
         </div>
-       
+
       </ion-col>
 
       <ion-col col-6>
-                <ion-item> 
+                <ion-item>
                   <ion-row>
                       <ion-icon name="clock"></ion-icon>
-                      <ion-icon name="arrow-forward"></ion-icon> 
-                      <h3 margin-left>{{startClock}}</h3> 
+                      <ion-icon name="arrow-forward"></ion-icon>
+                      <h3 margin-left>{{startClock}}</h3>
                   </ion-row>
-                 
+
                 </ion-item>
 
                 <ion-item>
@@ -77,15 +77,15 @@
                       <ion-icon name="arrow-back"> </ion-icon>
                       <h3 margin-left>{{stopClock}}</h3>
                   </ion-row>
-                   
+
                 </ion-item>
                 <ion-item>
                   <ion-row>
                       <ion-icon name="cash"></ion-icon>
-                     
+
                       <h3 padding-left margin-left>{{price}}</h3>
                   </ion-row>
-                   
+
                 </ion-item>
       </ion-col>
     </ion-row>
