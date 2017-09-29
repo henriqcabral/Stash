@@ -84,6 +84,9 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.1" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="phonegap-plugin-barcodescanner" spec="^6.0.8" />
-    <engine name="android" spec="~6.2.3" />
     <allow-navigation href="http://192.168.1.40:8100" />
+    <allow-navigation href="http://172.16.65.91:8100" />
+    <engine name="android" spec="~6.2.3" />
+    <plugin name="cordova-plugin-android-permissions" spec="~1.0.0" />
+    <plugin name="cordova-plugin-geolocation" spec="~2.4.3" />
 </widget>

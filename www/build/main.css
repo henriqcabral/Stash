@@ -25202,3 +25202,12 @@ ion-navbar.toolbar {
 page-home .btnlist {
   margin-top: 25%;
 }
+
+.ios home-page .scroll, .md home-page .scroll {
+  height: 100%;
+}
+
+.ios home-page #map, .md home-page #map {
+  width: 100%;
+  height: 100%;
+}

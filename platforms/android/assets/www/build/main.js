@@ -152,12 +152,63 @@ let MyApp = class MyApp {
     }
 };
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/home/tiago/StashBag/Stash/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/tiago/StashBag/Stash/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 266:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export HomePage */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+let HomePage = class HomePage {
+    constructor(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    ionViewDidLoad() {
+        this.loadMap();
+    }
+    loadMap() {
+        let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+        let mapOptions = {
+            center: latLng,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+    }
+};
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('map'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */]) === "function" && _a || Object)
+], HomePage.prototype, "mapElement", void 0);
+HomePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'search',template:/*ion-inline-start:"/home/tiago/StashBag/Stash/src/pages/search/search.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Map\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div #map id="map"></div>\n</ion-content>\n'/*ion-inline-end:"/home/tiago/StashBag/Stash/src/pages/search/search.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object])
+], HomePage);
+
+var _a, _b;
+//# sourceMappingURL=search.js.map
 
 /***/ }),
 
@@ -255,7 +306,7 @@ let CapturePage = class CapturePage {
 };
 CapturePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
-        selector: 'page-capture',template:/*ion-inline-start:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/capture/capture.html"*/'<!--\n  Generated template for the CapturePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Capture</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n    <ion-grid justify>\n        <ion-row justify-content-around>\n          <ion-col col-7>\n            <ion-item no-lines>\n              <ion-avatar item-start>\n                <img src="assets/icon/images.jpg">\n              </ion-avatar>\n              <h3>Marty McFly</h3>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n  <div *ngIf="displayform" padding>\n <!-- <div padding> -->\n    <ion-row justify-content-center>\n      <ion-item text-center>\n        <h1>{{price}} R$ </h1>\n      </ion-item>\n\n    </ion-row>\n\n\n  <div padding>\n    <ion-grid>\n      <ion-row justify-content-center>\n        <ion-col col-3>\n          <ion-item no-lines>\n            <h1>{{hours}}</h1>\n          </ion-item>\n          <h6>hours</h6>\n        </ion-col>\n      </ion-row>\n      <ion-row justify-content-around>\n        <ion-col col-3>\n          <button ion-button icon-only (click)="addValue()">\n            <ion-icon name="add"></ion-icon> </button>\n            </ion-col>\n            <ion-col col-3>\n                <button ion-button icon-only (click)="minusValue()">\n                    <ion-icon name="remove"></ion-icon></button>\n            </ion-col>\n\n            <ion-col col-3>\n                <button ion-button icon-only>\n                    <ion-icon name="options"></ion-icon>\n                  </button>\n            </ion-col>\n\n              <ion-col col-3>\n                  <button ion-button icon-only (click)="setValue()">\n                      <ion-icon name="checkmark"></ion-icon>\n                    </button>\n              </ion-col>\n\n\n      </ion-row>\n      <ion-row>\n          <button ion-button block large icon-left> <ion-icon name="calendar" ></ion-icon>Agendar</button>\n      </ion-row>\n    </ion-grid>\n  </div>\n</div>\n</ion-content>\n'/*ion-inline-end:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/capture/capture.html"*/,
+        selector: 'page-capture',template:/*ion-inline-start:"/home/tiago/StashBag/Stash/src/pages/capture/capture.html"*/'<!--\n  Generated template for the CapturePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Capture</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n    <ion-grid justify>\n        <ion-row justify-content-around>\n          <ion-col col-7>\n            <ion-item no-lines>\n              <ion-avatar item-start>\n                <img src="assets/icon/images.jpg">\n              </ion-avatar>\n              <h3>Marty McFly</h3>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n  <div *ngIf="displayform" padding>\n <!-- <div padding> -->\n    <ion-row justify-content-center>\n      <ion-item text-center>\n        <h1>{{price}} R$ </h1>\n      </ion-item>\n\n    </ion-row>\n\n\n  <div padding>\n    <ion-grid>\n      <ion-row justify-content-center>\n        <ion-col col-3>\n          <ion-item no-lines>\n            <h1>{{hours}}</h1>\n          </ion-item>\n          <h6>hours</h6>\n        </ion-col>\n      </ion-row>\n      <ion-row justify-content-around>\n        <ion-col col-3>\n          <button ion-button icon-only (click)="addValue()">\n            <ion-icon name="add"></ion-icon> </button>\n            </ion-col>\n            <ion-col col-3>\n                <button ion-button icon-only (click)="minusValue()">\n                    <ion-icon name="remove"></ion-icon></button>\n            </ion-col>\n\n            <ion-col col-3>\n                <button ion-button icon-only>\n                    <ion-icon name="options"></ion-icon>\n                  </button>\n            </ion-col>\n\n              <ion-col col-3>\n                  <button ion-button icon-only (click)="setValue()">\n                      <ion-icon name="checkmark"></ion-icon>\n                    </button>\n              </ion-col>\n\n\n      </ion-row>\n      <ion-row>\n          <button ion-button block large icon-left> <ion-icon name="calendar" ></ion-icon>Agendar</button>\n      </ion-row>\n    </ion-grid>\n  </div>\n</div>\n</ion-content>\n'/*ion-inline-end:"/home/tiago/StashBag/Stash/src/pages/capture/capture.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_barcode_scanner__["a" /* BarcodeScanner */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]])
 ], CapturePage);
@@ -299,7 +350,7 @@ let MyStashPage = class MyStashPage {
         this.countdown = 0;
         this.countdownmin = 0;
         this.lockStatus = true;
-        this.lockStatusText = "Locked";
+        this.lockStatusText = "Fechado";
         this.lockicon = "lock";
         this.startClock = "";
         this.stopClock = "";
@@ -328,7 +379,7 @@ let MyStashPage = class MyStashPage {
             if (this.navParams.get("hours") == NaN) {
                 this.showConfirm();
             }
-            this.lockStatusText = "aberto";
+            this.lockStatusText = "Aberto";
             this.lockicon = "unlock";
             if (this.countdownmin == 0 && this.countdown == 0) {
                 this.countdownTimer();
@@ -342,7 +393,7 @@ let MyStashPage = class MyStashPage {
         }
         else {
             this.lockbtndisable = false;
-            this.lockStatusText = "fechado";
+            this.lockStatusText = "Fechado";
             this.lockicon = "lock";
             this.param = {
                 lock: "Locked"
@@ -439,7 +490,7 @@ let MyStashPage = class MyStashPage {
         this.startClock = hr + ":" + mn;
         this.stopClock = (hr + this.navHours) + ":" + mn;
         this.countdown = this.timer - 1;
-        this.lockStatusText = "aberto";
+        this.lockStatusText = "Aberto";
         this.lockicon = "unlock";
         this.lockbtndisable = false;
         this.countdownmin = 59;
@@ -507,7 +558,7 @@ let MyStashPage = class MyStashPage {
 };
 MyStashPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-        selector: "page-my-stash",template:/*ion-inline-start:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/my-stash/my-stash.html"*/'<!--\n  Generated template for the MyStashPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Meu Stash</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n    <ion-grid justify>\n        <ion-row justify-content-around>\n          <ion-col col-7>\n            <ion-item no-lines>\n              <ion-avatar item-start>\n                <img src="assets/icon/images.jpg">\n              </ion-avatar>\n              <h3>Marty McFly</h3>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n\n\n<div margin-top>\n<ion-card>\n  <ion-item  text-center>\n    <h1 icon-left margin > <ion-icon name="stopwatch"></ion-icon> {{countdown}}:{{countdownmin}}</h1>\n </ion-item>\n <ion-item >\n   <ion-row justify-content-center>\n   <ion-col col-3 margin-left>\n      <button ion-button icon-only (click)="lockbtn()" large [disabled]="lockbtndisable">\n          <ion-icon [name]="lockicon"></ion-icon>\n        </button>\n   </ion-col>\n   <ion-col col-3 margin-left>\n      <button ion-button icon-only large>\n          <ion-icon name="timer"></ion-icon>\n        </button>\n   </ion-col>\n  </ion-row>\n  </ion-item>\n\n<ion-item text-center>\n  <h3>Lock Status: {{lockStatusText}}</h3>\n</ion-item>\n\n  <ion-item>\n    <ion-row  justify-content-center >\n      <ion-col col-6 align-self-center>\n        <div text-end>\n            <ion-icon name="briefcase" style="zoom:4.0;"></ion-icon>\n        </div>\n\n      </ion-col>\n\n      <ion-col col-6>\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="clock"></ion-icon>\n                      <ion-icon name="arrow-forward"></ion-icon>\n                      <h3 margin-left>{{startClock}}</h3>\n                  </ion-row>\n\n                </ion-item>\n\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="clock"></ion-icon>\n                      <ion-icon name="arrow-back"> </ion-icon>\n                      <h3 margin-left>{{stopClock}}</h3>\n                  </ion-row>\n\n                </ion-item>\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="cash"></ion-icon>\n\n                      <h3 padding-left margin-left>{{price}}</h3>\n                  </ion-row>\n\n                </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-item>\n</ion-card>\n\n</div>\n\n</ion-content>\n'/*ion-inline-end:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/my-stash/my-stash.html"*/
+        selector: "page-my-stash",template:/*ion-inline-start:"/home/tiago/StashBag/Stash/src/pages/my-stash/my-stash.html"*/'<!--\n  Generated template for the MyStashPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Meu Stash</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n    <ion-grid justify>\n        <ion-row justify-content-around>\n          <ion-col col-7>\n            <ion-item no-lines>\n              <ion-avatar item-start>\n                <img src="assets/icon/images.jpg">\n              </ion-avatar>\n              <h3>Marty McFly</h3>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n\n\n<div margin-top>\n<ion-card>\n  <ion-item  text-center>\n    <h1 icon-left margin > <ion-icon name="stopwatch"></ion-icon> {{countdown}}:{{countdownmin}}</h1>\n </ion-item>\n <ion-item >\n   <ion-row justify-content-center>\n   <ion-col col-3 margin-left>\n      <button ion-button icon-only (click)="lockbtn()" large [disabled]="lockbtndisable">\n          <ion-icon [name]="lockicon"></ion-icon>\n        </button>\n   </ion-col>\n   <ion-col col-3 margin-left>\n      <button ion-button icon-only large>\n          <ion-icon name="timer"></ion-icon>\n        </button>\n   </ion-col>\n  </ion-row>\n  </ion-item>\n\n<ion-item text-center>\n  <h3>Lock Status: {{lockStatusText}}</h3>\n</ion-item>\n\n  <ion-item>\n    <ion-row  justify-content-center >\n      <ion-col col-6 align-self-center>\n        <div text-end>\n            <ion-icon name="briefcase" style="zoom:4.0;"></ion-icon>\n        </div>\n\n      </ion-col>\n\n      <ion-col col-6>\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="clock"></ion-icon>\n                      <ion-icon name="arrow-forward"></ion-icon>\n                      <h3 margin-left>{{startClock}}</h3>\n                  </ion-row>\n\n                </ion-item>\n\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="clock"></ion-icon>\n                      <ion-icon name="arrow-back"> </ion-icon>\n                      <h3 margin-left>{{stopClock}}</h3>\n                  </ion-row>\n\n                </ion-item>\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="cash"></ion-icon>\n\n                      <h3 padding-left margin-left>{{price}}</h3>\n                  </ion-row>\n\n                </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-item>\n</ion-card>\n\n</div>\n\n</ion-content>\n'/*ion-inline-end:"/home/tiago/StashBag/Stash/src/pages/my-stash/my-stash.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavParams */],
@@ -526,8 +577,9 @@ MyStashPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__my_stash_my_stash__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__capture_capture__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -537,6 +589,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -551,12 +604,15 @@ let HomePage = class HomePage {
     stashbutton() {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__my_stash_my_stash__["a" /* MyStashPage */]);
     }
+    searchbutton() {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__search_search__["SearchPage"]);
+    }
 };
 HomePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Home\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid justify>\n    <ion-row justify-content-around>\n      <ion-col col-7>\n        <ion-item no-lines>\n          <ion-avatar item-start>\n            <img src="assets/icon/images.jpg">\n          </ion-avatar>\n          <h3>Marty McFly</h3>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n\n  <div padding class="btnlist">\n<button ion-button block large icon-left (click)="stashbutton()"> <ion-icon name="briefcase" ></ion-icon>Meu Stash</button>\n  <button ion-button block large icon-left (click)="pushbutton()"> <ion-icon name="barcode" ></ion-icon>Capturar</button>\n  <button ion-button block large icon-left> <ion-icon name="search" ></ion-icon>Buscar</button>\n  <button ion-button block large icon-left> <ion-icon name="calendar" ></ion-icon>Agendar</button>\n</div>\n</ion-content>\n'/*ion-inline-end:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/home/home.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["n" /* Component */])({
+        selector: 'page-home',template:/*ion-inline-start:"/home/tiago/StashBag/Stash/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Home\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid justify>\n    <ion-row justify-content-around>\n      <ion-col col-7>\n        <ion-item no-lines>\n          <ion-avatar item-start>\n            <img src="assets/icon/images.jpg">\n          </ion-avatar>\n          <h3>Marty McFly</h3>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n\n  <div padding class="btnlist">\n<button ion-button block large icon-left (click)="stashbutton()"> <ion-icon name="briefcase" ></ion-icon>Meu Stash</button>\n  <button ion-button block large icon-left (click)="pushbutton()"> <ion-icon name="barcode" ></ion-icon>Capturar</button>\n  <button ion-button block large icon-left (click)="searchbutton()"> <ion-icon name="search" ></ion-icon>Buscar</button>\n  <button ion-button block large icon-left> <ion-icon name="calendar" ></ion-icon>Agendar</button>\n</div>\n</ion-content>\n'/*ion-inline-end:"/home/tiago/StashBag/Stash/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["e" /* NavController */]])
 ], HomePage);
 
 //# sourceMappingURL=home.js.map

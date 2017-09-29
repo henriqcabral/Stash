@@ -1,5 +1,6 @@
 import { MyStashPage } from './../pages/my-stash/my-stash';
 import { CapturePage } from './../pages/capture/capture';
+import { SearchPage } from './../pages/search/search';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,4 +22,3 @@ export class MyApp {
     });
   }
 }
-

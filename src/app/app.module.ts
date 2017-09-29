@@ -8,12 +8,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SearchPage } from '../pages/search/search';
 import { HttpModule } from '@angular/http';
+import { Geolocation } from '@ionic-native/geolocation';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     CapturePage,
+    SearchPage,
     MyStashPage
 
   ],
@@ -27,12 +30,14 @@ import { HttpModule } from '@angular/http';
     MyApp,
     HomePage,
     CapturePage,
+    SearchPage,
     MyStashPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BarcodeScanner,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
