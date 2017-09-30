@@ -299,7 +299,7 @@ let MyStashPage = class MyStashPage {
         this.countdown = 0;
         this.countdownmin = 0;
         this.lockStatus = true;
-        this.lockStatusText = "Locked";
+        this.lockStatusText = "Fechado";
         this.lockicon = "lock";
         this.startClock = "";
         this.stopClock = "";
@@ -328,7 +328,7 @@ let MyStashPage = class MyStashPage {
             if (this.navParams.get("hours") == NaN) {
                 this.showConfirm();
             }
-            this.lockStatusText = "aberto";
+            this.lockStatusText = "Aberto";
             this.lockicon = "unlock";
             if (this.countdownmin == 0 && this.countdown == 0) {
                 this.countdownTimer();
@@ -342,7 +342,7 @@ let MyStashPage = class MyStashPage {
         }
         else {
             this.lockbtndisable = false;
-            this.lockStatusText = "fechado";
+            this.lockStatusText = "Fechado";
             this.lockicon = "lock";
             this.param = {
                 lock: "Locked"
@@ -439,7 +439,7 @@ let MyStashPage = class MyStashPage {
         this.startClock = hr + ":" + mn;
         this.stopClock = (hr + this.navHours) + ":" + mn;
         this.countdown = this.timer - 1;
-        this.lockStatusText = "aberto";
+        this.lockStatusText = "Aberto";
         this.lockicon = "unlock";
         this.lockbtndisable = false;
         this.countdownmin = 59;
@@ -507,7 +507,7 @@ let MyStashPage = class MyStashPage {
 };
 MyStashPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-        selector: "page-my-stash",template:/*ion-inline-start:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/my-stash/my-stash.html"*/'<!--\n  Generated template for the MyStashPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Meu Stash</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n    <ion-grid justify>\n        <ion-row justify-content-around>\n          <ion-col col-7>\n            <ion-item no-lines>\n              <ion-avatar item-start>\n                <img src="assets/icon/images.jpg">\n              </ion-avatar>\n              <h3>Marty McFly</h3>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n\n\n<div margin-top>\n<ion-card>\n  <ion-item  text-center>\n    <h1 icon-left margin > <ion-icon name="stopwatch"></ion-icon> {{countdown}}:{{countdownmin}}</h1>\n </ion-item>\n <ion-item >\n   <ion-row justify-content-center>\n   <ion-col col-3 margin-left>\n      <button ion-button icon-only (click)="lockbtn()" large [disabled]="lockbtndisable">\n          <ion-icon [name]="lockicon"></ion-icon>\n        </button>\n   </ion-col>\n   <ion-col col-3 margin-left>\n      <button ion-button icon-only large>\n          <ion-icon name="timer"></ion-icon>\n        </button>\n   </ion-col>\n  </ion-row>\n  </ion-item>\n\n<ion-item text-center>\n  <h3>Lock Status: {{lockStatusText}}</h3>\n</ion-item>\n\n  <ion-item>\n    <ion-row  justify-content-center >\n      <ion-col col-6 align-self-center>\n        <div text-end>\n            <ion-icon name="briefcase" style="zoom:4.0;"></ion-icon>\n        </div>\n\n      </ion-col>\n\n      <ion-col col-6>\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="clock"></ion-icon>\n                      <ion-icon name="arrow-forward"></ion-icon>\n                      <h3 margin-left>{{startClock}}</h3>\n                  </ion-row>\n\n                </ion-item>\n\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="clock"></ion-icon>\n                      <ion-icon name="arrow-back"> </ion-icon>\n                      <h3 margin-left>{{stopClock}}</h3>\n                  </ion-row>\n\n                </ion-item>\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="cash"></ion-icon>\n\n                      <h3 padding-left margin-left>{{price}}</h3>\n                  </ion-row>\n\n                </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-item>\n</ion-card>\n\n</div>\n\n</ion-content>\n'/*ion-inline-end:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/my-stash/my-stash.html"*/
+        selector: "page-my-stash",template:/*ion-inline-start:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/my-stash/my-stash.html"*/'<!--\n  Generated template for the MyStashPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Meu Stash</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n    <ion-grid justify>\n        <ion-row justify-content-around>\n          <ion-col col-7>\n            <ion-item no-lines>\n              <ion-avatar item-start>\n                <img src="assets/icon/images.jpg">\n              </ion-avatar>\n              <h3>Marty McFly</h3>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n\n\n<div margin-top>\n<ion-card>\n  <ion-item  text-center>\n    <h1 icon-left margin > <ion-icon name="stopwatch"></ion-icon> {{countdown}}:{{countdownmin}}</h1>\n </ion-item>\n <ion-item >\n   <ion-row justify-content-center>\n   <ion-col col-3 margin-left>\n      <button ion-button icon-only (click)="lockbtn()" large [disabled]="lockbtndisable">\n          <ion-icon [name]="lockicon"></ion-icon>\n        </button>\n   </ion-col>\n   <ion-col col-3 margin-left>\n      <button ion-button icon-only large>\n          <ion-icon name="time"></ion-icon>\n        </button>\n   </ion-col>\n  </ion-row>\n  </ion-item>\n\n<ion-item text-center>\n  <h3>Lock Status: {{lockStatusText}}</h3>\n</ion-item>\n\n  <ion-item>\n    <ion-row  justify-content-center >\n      <ion-col col-6 align-self-center>\n        <div text-end>\n            <ion-icon name="briefcase" style="zoom:4.0;"></ion-icon>\n        </div>\n\n      </ion-col>\n\n      <ion-col col-6>\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="clock"></ion-icon>\n                      <ion-icon name="arrow-forward"></ion-icon>\n                      <h3 margin-left>{{startClock}}</h3>\n                  </ion-row>\n\n                </ion-item>\n\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="clock"></ion-icon>\n                      <ion-icon name="arrow-back"> </ion-icon>\n                      <h3 margin-left>{{stopClock}}</h3>\n                  </ion-row>\n\n                </ion-item>\n                <ion-item>\n                  <ion-row>\n                      <ion-icon name="cash"></ion-icon>\n\n                      <h3 padding-left margin-left>{{price}}</h3>\n                  </ion-row>\n\n                </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-item>\n</ion-card>\n\n</div>\n\n</ion-content>\n'/*ion-inline-end:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/my-stash/my-stash.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavParams */],
@@ -554,7 +554,7 @@ let HomePage = class HomePage {
 };
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Home\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid justify>\n    <ion-row justify-content-around>\n      <ion-col col-7>\n        <ion-item no-lines>\n          <ion-avatar item-start>\n            <img src="assets/icon/images.jpg">\n          </ion-avatar>\n          <h3>Marty McFly</h3>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n\n  <div padding class="btnlist">\n<button ion-button block large icon-left (click)="stashbutton()"> <ion-icon name="briefcase" ></ion-icon>Meu Stash</button>\n  <button ion-button block large icon-left (click)="pushbutton()"> <ion-icon name="barcode" ></ion-icon>Capturar</button>\n  <button ion-button block large icon-left> <ion-icon name="search" ></ion-icon>Buscar</button>\n  <button ion-button block large icon-left> <ion-icon name="calendar" ></ion-icon>Agendar</button>\n</div>\n</ion-content>\n'/*ion-inline-end:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Home\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid justify>\n    <ion-row class="rowicon" justify-content-center>\n      <ion-col col-2>\n        <ion-item no-lines>\n          <ion-avatar item-start>\n            <img src="assets/icon/images.jpg">\n          </ion-avatar>\n          <h3>Marty McFly</h3>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n\n  <div padding class="btnlist">\n<button ion-button block large icon-left (click)="stashbutton()"> <ion-icon name="briefcase" ></ion-icon>Meu Stash</button>\n  <button ion-button block large icon-left (click)="pushbutton()"> <ion-icon name="barcode" ></ion-icon>Capturar</button>\n  <button ion-button block large icon-left> <ion-icon name="search" ></ion-icon>Buscar</button>\n  <button ion-button block large icon-left (click)="stashbutton()"> <ion-icon name="calendar" ></ion-icon>Agendar</button>\n</div>\n</ion-content>\n'/*ion-inline-end:"/home/gabriel/Documentos/StashApp/StashAppFinal/Stash/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */]])
 ], HomePage);

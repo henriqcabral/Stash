@@ -8,8 +8,8 @@
 
 <ion-content>
   <ion-grid justify>
-    <ion-row justify-content-around>
-      <ion-col col-7>
+    <ion-row class="rowicon" justify-content-center>
+      <ion-col col-2>
         <ion-item no-lines>
           <ion-avatar item-start>
             <img src="assets/icon/images.jpg">
@@ -26,6 +26,6 @@
 <button ion-button block large icon-left (click)="stashbutton()"> <ion-icon name="briefcase" ></ion-icon>Meu Stash</button>
   <button ion-button block large icon-left (click)="pushbutton()"> <ion-icon name="barcode" ></ion-icon>Capturar</button>
   <button ion-button block large icon-left> <ion-icon name="search" ></ion-icon>Buscar</button>
-  <button ion-button block large icon-left> <ion-icon name="calendar" ></ion-icon>Agendar</button>
+  <button ion-button block large icon-left (click)="stashbutton()"> <ion-icon name="calendar" ></ion-icon>Agendar</button>
 </div>
 </ion-content>

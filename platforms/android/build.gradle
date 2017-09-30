@@ -88,6 +88,7 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
+apply from: "cordova-plugin-crosswalk-webview/starter-xwalk.gradle"
 apply from: "phonegap-plugin-barcodescanner/starter-barcodescanner.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 

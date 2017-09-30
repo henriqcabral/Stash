@@ -5074,7 +5074,7 @@ h2 {
 }
 
 h3 {
-  font-size: 5rem;
+  font-size: 1rem;
 }
 
 h4 {
@@ -25201,4 +25201,9 @@ ion-navbar.toolbar {
 
 page-home .btnlist {
   margin-top: 25%;
+}
+
+page-home .rowicon {
+  margin-top: 50px;
+  margin-bottom: -51px;
 }
