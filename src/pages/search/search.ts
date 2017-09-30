@@ -25,7 +25,8 @@ export class SearchPage {
 
     this.geolocation.getCurrentPosition().then((position) => {
 
-      let latLng = new google.maps.LatLng(-23.573978, -46.623272);
+      console.log("position.coords.latitude, position.coords.longitude", position.coords.latitude, position.coords.longitude);
+      let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
       let mapOptions = {
         center: latLng,
@@ -33,7 +34,11 @@ export class SearchPage {
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
 
+      console.log("A this.map", this.map);
+
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+      console.log("B this.map", this.map);
 
     }, (err) => {
       console.log(err);
