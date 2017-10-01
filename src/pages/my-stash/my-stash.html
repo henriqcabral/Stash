@@ -36,21 +36,28 @@
  <ion-item >
    <ion-row justify-content-center>
    <ion-col col-3 margin-left>
-      <button ion-button icon-only (click)="lockbtn()" large [disabled]="lockbtndisable">
+      <button ion-fab icon-only (click)="lockbtn()" large [disabled]="lockbtndisable">
           <ion-icon [name]="lockicon"></ion-icon>
         </button>
    </ion-col>
+   <!--<ion-col col-3 margin-left>
+      <button ion-fab icon-only large>
+          <ion-icon name="clock"></ion-icon>
+        </button>
+   </ion-col>  -->
+   <!--novo-->
    <ion-col col-3 margin-left>
-      <button ion-button icon-only large>
-          <ion-icon name="timer"></ion-icon>
+      <button ion-fab icon-only (click)="finalizar()" large>
+          <ion-icon name="log-in"></ion-icon>
         </button>
    </ion-col>
+   <!---->
   </ion-row>
   </ion-item>
 
-<ion-item text-center>
+<!--<ion-item text-center>
   <h3>Lock Status: {{lockStatusText}}</h3>
-</ion-item>
+</ion-item> -->
 
   <ion-item>
     <ion-row  justify-content-center >

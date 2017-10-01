@@ -1,13 +1,24 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Home
+      StashBag
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+<!--
   <ion-grid justify>
+    <ion-col col-4>
+      <ion-row justify-content-center>
+        <button ion-button clear icon-only (click)="stashbutton()">
+            <ion-icon name="briefcase" style="zoom:2.0;"></ion-icon>
+        </button>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
+-->
+ <ion-grid justify>
     <ion-row justify-content-around>
       <ion-col col-7>
         <ion-item no-lines>
@@ -23,7 +34,7 @@
 
 
   <div padding class="btnlist">
-<button ion-button block large icon-left (click)="stashbutton()"> <ion-icon name="briefcase" ></ion-icon>Meu Stash</button>
+  <button ion-button block large icon-left (click)="stashbutton()"> <ion-icon name="briefcase" ></ion-icon>Meu Stash</button>
   <button ion-button block large icon-left (click)="pushbutton()"> <ion-icon name="barcode" ></ion-icon>Capturar</button>
   <button ion-button block large icon-left (click)="searchbutton()"> <ion-icon name="search" ></ion-icon>Buscar</button>
   <button ion-button block large icon-left> <ion-icon name="calendar" ></ion-icon>Agendar</button>

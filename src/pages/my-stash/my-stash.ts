@@ -1,4 +1,5 @@
 import { CapturePage } from "./../capture/capture";
+import { HomePage } from './../home/home';
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { Http } from "@angular/http";
@@ -53,6 +54,7 @@ export class MyStashPage {
           this.showConfirm();
         }
         this.lockStatusText = "Aberto";
+        this.showStatus();
         this.lockicon = "unlock";
         if (this.countdownmin == 0 && this.countdown == 0) {
           this.countdownTimer();
@@ -65,6 +67,7 @@ export class MyStashPage {
       } else {
         this.lockbtndisable = false;
         this.lockStatusText = "Fechado";
+        this.showStatus();
         this.lockicon = "lock";
         this.param = {
           lock: "Locked"
@@ -72,80 +75,6 @@ export class MyStashPage {
         this.restLock(this.param);
       }
     }
-  /**lockbtn() {
-    this.lockStatus = !this.lockStatus;
-    this.lockbtndisable = true;
-    if (!this.lockStatus) {
-      if (this.navParams.get("hours") == NaN) {
-        this.showConfirm();
-      }
-
-      if (this.countdownmin == 0 && this.countdown == 0) {
-        this.countdownTimer();
-      } else {
-        this.param = {
-          lock: "Unlocked"
-        };
-        this.getdata(this.param).then(data => {
-          this.lockbtndisable = false;
-          this.lockStatusText = "Unlocked";
-          this.lockicon = "unlock";
-        });
-      }
-    } else {
-      this.lockbtndisable = true;
-      this.lockStatusText = "locked";
-      this.lockicon = "lock";
-      this.param = {
-        lock: "Locked"
-      };
-      this.getdata(this.param).then(data => {
-        this.lockbtndisable = false;
-      });
-    }
-  }**/
-  /**countdownTimer() {
-    let d = new Date();
-    let hr = d.getHours();
-    let mn = d.getMinutes();
-    this.param = {
-      hours: this.navHours,
-      min: mn,
-      start: hr,
-      stash: this.navPrice,
-      lock: "Unlocked"
-    };
-    this.getdata(this.param).then(data => {
-      let newdata = JSON.parse(JSON.stringify(data));
-      console.log(newdata);
-      if (newdata.endTime > 24) {
-        newdata.endTime = newdata.endTime - 24;
-      }
-      this.price = newdata.price;
-      this.startClock = newdata.startTime + ":" + newdata.min;
-      this.stopClock = newdata.endTime + ":" + newdata.min;
-      this.price = newdata.stash;
-      this.countdown = newdata.timer - 1;
-      this.lockStatusText = "Unlocked";
-      this.lockicon = "unlock";
-      this.lockbtndisable = false;
-      this.countdownmin = 59;
-      this.intervaltimer = setInterval(function() {
-        this.countdownmin -= 1;
-        if (this.countdownmin == -1) {
-          this.countdownmin = 59;
-          if (this.countdown > 0) {
-            this.countdown -= 1;
-          }
-          if (this.countdownmin == 0 && this.countdown == 0) {
-            clearInterval(this.intervaltimer);
-          }
-        }
-      }, 60000);
-      this.lockbtndisable = false;
-    });
-  }**/
-
 
   countdownTimer() {
     let d = new Date();
@@ -223,8 +152,8 @@ export class MyStashPage {
  //
   showConfirm() {
     let confirm = this.alertCtrl.create({
-      title: "Error!!",
-      message: "Please Scan Qr Code and set Hours",
+      title: "Erro!!",
+      message: "QRCode não encontrado!",
       buttons: [
         {
           text: "OK",
@@ -236,4 +165,36 @@ export class MyStashPage {
     });
     confirm.present();
   }
+
+  finalizar() {
+  const alert = this.alertCtrl.create({
+    title: 'Deseja encerrar?',
+    message: 'Sua sessão no Stash será encerrada',
+    buttons: [
+      {
+        text: 'Cancelar',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Confirmar',
+        handler: () => {
+          this.navCtrl.push(HomePage);
+        }
+      }
+    ]
+  });
+  alert.present();
+}
+
+  showStatus(){
+    const alert = this.alertCtrl.create({
+    title: 'Stash '+this.lockStatusText,
+    buttons: ['OK']
+  });
+  alert.present();
+  }
+
 }
