@@ -1,13 +1,17 @@
+
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      StashBag
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar color='primary'>
+    <ion-navbar color='primary'>
+      <ion-title>
+        StashBag
+      </ion-title>
+    </ion-navbar>
+  </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-<!--
+
   <ion-grid justify>
     <ion-col col-4>
       <ion-row justify-content-center>
@@ -17,24 +21,9 @@
       </ion-row>
     </ion-col>
   </ion-grid>
--->
- <ion-grid justify>
-    <ion-row justify-content-around>
-      <ion-col col-7>
-        <ion-item no-lines>
-          <ion-avatar item-start>
-            <img src="assets/icon/images.jpg">
-          </ion-avatar>
-          <h3>Marty McFly</h3>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
 
 
   <div padding class="btnlist">
-  <button ion-button block large icon-left (click)="stashbutton()"> <ion-icon name="briefcase" ></ion-icon>Meu Stash</button>
   <button ion-button block large icon-left (click)="pushbutton()"> <ion-icon name="barcode" ></ion-icon>Capturar</button>
   <button ion-button block large icon-left (click)="searchbutton()"> <ion-icon name="search" ></ion-icon>Buscar</button>
   <button ion-button block large icon-left> <ion-icon name="calendar" ></ion-icon>Agendar</button>
